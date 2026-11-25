@@ -1,4 +1,4 @@
-:- module(courses, [
+:- module(course_catalog, [
     student/1,
     lecturer/1,
     course/3,

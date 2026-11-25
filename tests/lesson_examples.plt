@@ -1,6 +1,6 @@
-:- begin_tests(family).
+:- begin_tests(family_tree).
 
-:- use_module('../teaching/family').
+:- use_module('../lessons/family_tree').
 
 test(grandchildren, [all(Child == [dora, eli])]) :-
     grandparent(ada, Child).
@@ -14,12 +14,12 @@ test(ancestor_bound) :-
 test(no_self_ancestor, [fail]) :-
     ancestor(ada, ada).
 
-:- end_tests(family).
+:- end_tests(family_tree).
 
 
-:- begin_tests(courses).
+:- begin_tests(course_catalog).
 
-:- use_module('../teaching/courses').
+:- use_module('../lessons/course_catalog').
 
 test(departments, [true(Departments == [computer_science,
                                        information_systems])]) :-
@@ -50,12 +50,12 @@ test(student_grade_wrong, [fail]) :-
 test(weighted_average, [true(Average =:= 31 / 7)]) :-
     weighted_average(ian, Average).
 
-:- end_tests(courses).
+:- end_tests(course_catalog).
 
 
-:- begin_tests(constraints).
+:- begin_tests(course_scheduling).
 
-:- use_module('../teaching/constraints').
+:- use_module('../lessons/course_scheduling').
 
 test(all_schedules, [all(A-B == [1-2, 1-3, 2-3])]) :-
     course_pair(A, B).
@@ -66,4 +66,4 @@ test(bound_schedule) :-
 test(invalid_schedule, [fail]) :-
     course_pair(3, 1).
 
-:- end_tests(constraints).
+:- end_tests(course_scheduling).

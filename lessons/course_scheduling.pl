@@ -1,4 +1,4 @@
-:- module(constraints, [course_pair/2]).
+:- module(course_scheduling, [course_pair/2]).
 
 /** <module> A small finite-domain scheduling example.
 

@@ -1,4 +1,4 @@
-:- module(family, [parent/2, grandparent/2, ancestor/2]).
+:- module(family_tree, [parent/2, grandparent/2, ancestor/2]).
 
 /** <module> A small family tree for facts, rules, and recursion.
 
