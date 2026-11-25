@@ -90,6 +90,9 @@ The examples have [PlUnit tests](tests/lesson_examples.plt) covering expected an
 
 ```sh
 swipl -q -s tests/lesson_examples.plt -g run_tests -t halt
+
+# Check every lesson and each archived dataset in a separate interpreter:
+tests/check_all.sh
 ```
 
 Inside SWI-Prolog, `make.` reloads edited files. To inspect a predicate, try `listing(course_catalog:student_department/2).` The [SWI-Prolog manual](https://www.swi-prolog.org/pldoc/doc_for?object=manual) and [The Power of Prolog](https://www.metalevel.at/prolog) are useful next references.
@@ -102,6 +105,6 @@ Inside SWI-Prolog, `make.` reloads edited files. To inspect a predicate, try `li
 | `tests/lesson_examples.plt` | Runnable PlUnit checks for the reference modules |
 | `archive/cocis_course_records.pl` | Original COCIS student and course dataset |
 | `archive/mixed_examples_and_records.pl` | Mixed examples plus a variant of the course dataset |
-| `archive/assignment_2/course_records.pl`, `archive/course_2/course_records.pl`, `archive/final_project/group_2_course_records.pl` | Historical assignment variants |
+| `archive/assignment/course_records.pl`, `archive/course/course_records.pl`, `archive/final_project/group_2_course_records.pl` | Historical assignment variants |
 
-The legacy files are retained as source material, not as a single combined database. They repeat predicate names and contain inconsistencies useful for review exercises: names with hyphens such as `brian-griffin` are parsed as subtraction terms (quote them as `'brian-griffin'` if an atom is intended); identifiers like `15-211` are arithmetic terms, not course-code atoms; and some scores, enrollments, course codes, and hard-coded averages disagree. Consult one legacy file at a time in a fresh interpreter session. The clean teaching modules use simple atoms and internally consistent sample records.
+The legacy files are retained as separate datasets, not as a single combined database. They repeat predicate names, so consult one archive file at a time in a fresh interpreter session. Hyphenated names and numeric course identifiers are quoted atoms, and grade averages are calculated from recorded scores and course credits. Some archived teaching assignments still reference course codes without course metadata; their titles and credit values are unknown. The clean teaching modules use small, internally consistent sample records.
